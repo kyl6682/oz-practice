@@ -18,9 +18,13 @@ jobs :
       - name : 빌드하기
         run : npm run build
 
-      - name : Debugging
+      - name : AWS Resource 접근을 위한 인증 설정
+        uses : aws-actions/configure-aws-credentials@v4
+        with : 
+          aws-region : us-east-1
+          aws-access-key-id : {{ $secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key : {{ $secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name : S3 기존 파일들 전체 삭제
         run : |
-          ls
-          echo "---------------------"
-          cd dist
-          ls
+          aws s3 rm --recursive s3://oz-practice 
