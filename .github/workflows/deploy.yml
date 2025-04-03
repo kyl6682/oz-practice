@@ -15,3 +15,11 @@ jobs :
       - name : Repository 파일 출력하기
         run : ls
 
+      - name : 빌드하기
+        run : npm run build
+
+      - name : Debugging
+        run : |
+          ls
+          cd dist
+          ls
