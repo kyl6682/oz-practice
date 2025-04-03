@@ -18,3 +18,8 @@ jobs :
           echo "Good"
           echo "Morning"
           pwd
+      
+      - name : 변수 사용하기
+        run : |
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
