@@ -12,3 +12,9 @@ jobs :
     steps : 
       - name : Hello World 출력하기
         run : echo "Hello World"
+
+      - name : 여러 명령어 문장 작성하기
+        run : |
+          echo "Good"
+          echo "Morning"
+          pwd
