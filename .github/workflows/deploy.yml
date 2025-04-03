@@ -1,0 +1,14 @@
+name : Github Actions 실행시켜보기
+
+on : 
+  push : 
+    branch : 
+      - main
+
+jobs : 
+  My-Depoly-Job : 
+    runs-on : ubuntu-latest
+
+    steps : 
+      - name : Hello World 출력하기
+        run : echo "Hello World"
