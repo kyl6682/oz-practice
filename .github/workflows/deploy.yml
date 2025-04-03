@@ -27,4 +27,9 @@ jobs :
 
       - name : S3 기존 파일들 전체 삭제
         run : |
-          aws s3 rm --recursive s3://oz-practice 
+          aws s3 rm --recursive s3://oz-practice
+
+      - name : S3에 빌드된 파일 업로드
+        run : |
+          aws s3 cp ./dist s3://oz-practice/ --recursive
+
